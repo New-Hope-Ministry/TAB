@@ -8364,10 +8364,34 @@ window.addEventListener("load", async () => {
             toggleTheme();
             rotateTheme = false;
         };*/
+        //startUp();
     };
     adjustPosition();
     window.addEventListener("resize", adjustPosition);
 });
+
+async function startUp() {
+
+     let id = null;
+
+     if (activeVersionID) {
+          id = Number(activeVersionID.slice("id-version".length));
+          setQuerystring('verid', id);
+          selected(activeVersionID, 'id-versions');
+     };
+     if (activeBookID) {
+          id = Number(activeBookID.slice("id-book".length));
+          setQuerystring('bid', id);
+          selected(activeBookID, 'id-books');
+     };
+     if (activeChapterID) {
+          id = Number(activeChapterID.slice("id-chapter".length));
+          setQuerystring('cn', id);
+          selected(activeChapterID, 'id-chapters');
+     };
+     return true;
+};
+
 
 async function getDefaults() {
 
@@ -8696,8 +8720,6 @@ async function getChapter() {
         p.appendChild(sp);
         page.appendChild(p);
         ii++;
-        console.log(ii);
-        console.log(i);
     };
     //page.appendChild(p);
     //setFontSize();
