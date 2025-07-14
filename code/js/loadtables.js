@@ -1,5 +1,4 @@
 
-// Corrected loadTables.js to loadtables.js
 async function loadBooks() {
 
      let i = 0;
