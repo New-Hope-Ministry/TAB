@@ -158,13 +158,13 @@ async function getChapter() {
      let page = document.getElementById('id-page');
      document.getElementById('id-MenuBtn2').textContent = document.getElementById(activeBookID).textContent;
      h2.textContent = `${document.getElementById(activeBookID).textContent} ${activeChapter}`;
+     document.getElementById('id-bottomTitleLine').textContent = h2.textContent;
      if (isTWF) {
           let sp2 = document.createElement('span');
           sp2.classList.add('cs-edited');
           sp2.textContent =` TWF - Last Edited: ${dateEdited}`
           h2.appendChild(sp2);
      };
-     document.getElementById('id-bottomTitleLine').textContent = h2.textContent;
      page.appendChild(h2);
 
      let p;
