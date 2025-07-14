@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<base href="./">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/png" href="images/icons/favicon-16.png">
+
+     <link async rel="stylesheet" type="text/css" href="code/css/variables.css">
+     <link async rel="stylesheet" type="text/css" href="code/css/chron.css">
+
+     <script async src="code/js/variables.js"></script>
+     <script async src="code/js/chron.js"></script>
+
+</head>
+
+<body>
+
+     <div id="top"></div>
+
+     <div id="id-header" class="cs-header cs-title" onclick="openBox(event)">
+          <h1 class="cs-headerTitle cs-chronTitleHeader">Ark Bible 365 Day Chronological Reading Plan</h1>
+     </div>
+
+     <div id="id-header1" class="cs-header cs-banner" onclick="openBoxes(event)">
+          <div id="id-menu" class="cs-menu cs-chronMenu">
+               <div class="cs-menu1" translate="no">
+                    <button id="id-ChronBtn1" class="cs-menuBtn cs-menuBtn1 cs-chronMenu" onclick="openBox(event)"
+                         title="Select A Version" translate="no">TWF</button>
+                    <button id="id-ChronBtn2" class="cs-menuBtn cs-menuBtn1 cs-chronMenu" onclick="openBox(event)"
+                         title="Select A Day" translate="no">Day 1</button>
+                    <button id="id-ChronBtn3" class="cs-menuBtn cs-menuBtn2 cs-chronMenu" onclick="openBox(event)"
+                         title="Select A Chapter" translate="no">Genesis 1</button>
+                    <button id="id-ChronBtn3" class="cs-menuBtn cs-menuBtn2 cs-chronMenu" onclick="restart(event)"
+                         title="Restart" translate="no">Restart</button>
+               </div>
+          </div>
+     </div>
+
+     <div id="id-pageContainer" class="cs-pageContainer" onclick="openBox(event)">
+          <div id="id-mainPage" class="cs-mainPage">
+
+               <div id="id-headline" class="cs-headline"></div>
+               <div id="id-page" class="cs-page"></div>
+
+               <br><br><br><br><br>
+               <div id="id-bottomTitleLine" class="cs-bottomLine"></div>
+          </div>
+     </div>
+
+     <br><br>
+     <div class="cs-bottom">
+          <br>
+          <hr class="cs-hrCopyright">
+          <br><br>
+
+          <div class="cs-GodLovesYou">
+               <div>
+                    <div>The chronological reading plan for The Ark Bible 365 Day Chronological Reading App</div>
+                    <div>comes from the Blue Letter Bible Daily Bible Reading Program Chronological Plan.</div>
+               </div>
+
+               <a class="cs-copyright" href="https://www.blueletterbible.org/assets/pdf/dbrp/1Yr_ChronologicalPlan.pdf">
+                    <span>Blue Letter Bible Chronological Reading Plan</span>
+               </a>
+          </div>
+          
+          <br><br>
+          <div class="cs-GodLovesYou">
+               <div>God loves you, Jesus loves you, I love you, and this is God's free gift for you!</div>
+               <div>The TWF version is being actively edited and is subject to change daily.</div>
+               <div>If you prefer to read older Bible versions, please feel free to do so.</div>
+
+               <a href="license.html" class="cs-copyright">
+                    <span>Copyright ©2024 New Hope Ministries</span>
+                    <span class="cs-copySign">●</span>
+                    <span>MIT License </span>
+                    <span class="cs-copySign">●</span>
+                    <span> Public Domain</span>
+               </a>
+               <br><br>
+          </div>
+     </div>
+</body>
+
+<div id="id-chronVersions" class="cs-versions" translate="no"></div>
+<div id="id-chronDays" class="cs-chronDays" translate="no"></div>
+<div id="id-chronChapters" class="cs-chronChapters" translate="no"></div>
+
+</html>
