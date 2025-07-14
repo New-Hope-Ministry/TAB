@@ -1,4 +1,4 @@
-const dateEdited = '7-13-2025';
+const dateEdited = '7-14-2025';
 
 var allLoaded = false;
 var bookSort = false;
@@ -18,6 +18,7 @@ var activeFontSize = defaultFontSize;
 var activeLanguageID = null;
 var activeVersionID = null;
 
+var isTWF = true;
 var paragraphLayoutDefault = 0;
 var redLetterDefault = 0;
 var rotateTheme = true;

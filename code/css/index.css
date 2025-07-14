@@ -712,6 +712,7 @@
               transform: rotate(360deg);
          }
     }
+     .cs-edited { font-size: .4em; color: #545353; }
 
 /*? Media Queries Widths */
      @media (max-width: 1920px) {

@@ -90,7 +90,7 @@ async function getVersion(e = null) {
      let aVersion = document.getElementById(id);
      let idx = Number(aVersion.dataset.index);
      let url = `data/${versions[idx].ar}/${versions[idx].ar}Verses.json`;
-
+     if (versions[idx].ar === 'TWF') {isTWF = true} else {isTWF = false};
      try {
           const res = await fetch(url);
           if (!res.ok) { throw new Error(res.status); };
@@ -158,6 +158,12 @@ async function getChapter() {
      let page = document.getElementById('id-page');
      document.getElementById('id-MenuBtn2').textContent = document.getElementById(activeBookID).textContent;
      h2.textContent = `${document.getElementById(activeBookID).textContent} ${activeChapter}`;
+     if (isTWF) {
+          let sp2 = document.createElement('span');
+          sp2.classList.add('cs-edited');
+          sp2.textContent =` TWF - Last Edited: ${dateEdited}`
+          h2.appendChild(sp2);
+     };
      document.getElementById('id-bottomTitleLine').textContent = h2.textContent;
      page.appendChild(h2);
 
