@@ -184,11 +184,10 @@ p { font-size: 1.06rem; }
 .cs-chronChapter:hover,
 .cs-version:hover { cursor: pointer; background-color: #8e8c8c; color: white; }
 
+.cs-bvSelected { background-color: #8e8c8c; color: white; }
+
 /*? Media Queries widths */
-@media (max-width: 480px) {
-     .cs-chronMenu { font-size: .80rem; }
-     .cs-chronTitleHeader { font-size: .80rem; }
-}
+@media (max-width: 480px) { .cs-chronMenu { font-size: .80rem; } .cs-chronTitleHeader { font-size: .80rem; } }
 @media (max-width: 348px) { .cs-chronDay { font-size: 1.2em; height: 1.6em; width: 1.6em; } }
 
 

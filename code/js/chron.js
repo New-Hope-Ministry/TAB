@@ -8,6 +8,7 @@ var activeChronChapterID = null;
 var activeChronVersion = null;
 var activeChronVersionID = null;
 var activeChronVersionText = null;
+
 var pastActiveChronDayID = null;
 var pastActiveChronChapterID = null;
 var pastActiveChronVersion = null;
@@ -8355,43 +8356,33 @@ window.addEventListener("load", async () => {
     if (rec) { rec = false; rec = await getChapter(); };
 
     if (rec) {
-        document.getElementById(activeChronDayID).classList.add('cs-bvSelected');
-        document.getElementById(activeChronChapterID).classList.add('cs-bvSelected');
-        document.getElementById(activeChronVersion).classList.add('cs-bvSelected');
-        document.getElementById('id-ChronBtn2').textContent = `Day ${document.getElementById(activeChronDayID).textContent}`;
-        /*if (setTheme === '1') {
-            darkTheme();
-            toggleTheme();
-            rotateTheme = false;
-        };*/
-        //startUp();
+          initialize();
+          setFontSize();
+          /*if (setTheme === '1') {
+               darkTheme();
+               toggleTheme();
+               rotateTheme = false;
+          };*/
     };
     adjustPosition();
     window.addEventListener("resize", adjustPosition);
 });
 
-async function startUp() {
+async function initialize() {
 
-     let id = null;
-
-     if (activeVersionID) {
-          id = Number(activeVersionID.slice("id-version".length));
-          setQuerystring('verid', id);
-          selected(activeVersionID, 'id-versions');
-     };
-     if (activeBookID) {
-          id = Number(activeBookID.slice("id-book".length));
-          setQuerystring('bid', id);
-          selected(activeBookID, 'id-books');
-     };
-     if (activeChapterID) {
-          id = Number(activeChapterID.slice("id-chapter".length));
-          setQuerystring('cn', id);
-          selected(activeChapterID, 'id-chapters');
-     };
+     document.getElementById(activeChronDayID).classList.add('cs-bvSelected');
+     document.getElementById(activeChronChapterID).classList.add('cs-bvSelected');
+     document.getElementById(activeChronVersion).classList.add('cs-bvSelected');
+     document.getElementById('id-ChronBtn2').textContent = `Day ${document.getElementById(activeChronDayID).textContent}`;
      return true;
 };
 
+async function setFontSize() {
+     const allP = document.querySelectorAll('p');
+     for (const ps of allP) {
+          if (ps.id !== 'id-endLine') { ps.style.fontSize = `${activeFontSize}rem`; };
+     };
+};
 
 async function getDefaults() {
 
@@ -8421,6 +8412,12 @@ async function getDefaults() {
     if (!activeChronChapterID) { activeChronChapterID = defaultChronChapterID; };
     pastActiveChronChapterID = activeChronChapterID;
     localStorage.setItem('chapter', activeChronChapterID);
+
+    setTheme = localStorage.getItem("setTheme");
+     activeFontSize = localStorage.getItem("activeFontSize");
+     if (!activeFontSize) { activeFontSize = 1.06; } else { activeFontSize = Number(activeFontSize); };
+     activeFontSizeCount = localStorage.getItem("activeFontSizeCount");
+     if (!activeFontSizeCount) { activeFontSizeCount = 0; } else { activeFontSizeCount = Number(activeFontSizeCount); };
 
     return true;
 };
@@ -8531,6 +8528,7 @@ async function restart(e = null) {
     selected('id-chronChapter1', 'id-chronChapters');
     rec = await getChapter();
     document.getElementById('top').scrollIntoView({ block: 'start' });
+    initialize();
     return true;
 };
 
