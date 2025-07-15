@@ -185,6 +185,7 @@ p { font-size: 1.06rem; }
 .cs-version:hover { cursor: pointer; background-color: #8e8c8c; color: white; }
 
 .cs-bvSelected { background-color: #8e8c8c; color: white; }
+.cs-darkTheme { background-color: #3d3636; color: white; }
 
 /*? Media Queries widths */
 @media (max-width: 480px) { .cs-chronMenu { font-size: .80rem; } .cs-chronTitleHeader { font-size: .80rem; } }

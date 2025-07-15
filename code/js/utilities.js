@@ -78,7 +78,9 @@ function closeLanguage(e = null) {
 
 };
 
-function closeSave() {
+async function closeSave() {
+     const keys = await caches.keys();
+     await Promise.all(keys.map(key => caches.delete(key)));
      document.getElementById('id-end').style.display = 'none';
      localStorage.setItem("savedLocal", true);
 };

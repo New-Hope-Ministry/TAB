@@ -8358,15 +8358,31 @@ window.addEventListener("load", async () => {
     if (rec) {
           initialize();
           setFontSize();
-          /*if (setTheme === '1') {
+          if (setTheme === '1') {
                darkTheme();
                toggleTheme();
                rotateTheme = false;
-          };*/
+          };
     };
     adjustPosition();
     window.addEventListener("resize", adjustPosition);
 });
+
+function darkTheme() {
+     document.documentElement.style.setProperty('--bodyBackground', '#3d3636');
+     document.documentElement.style.setProperty('--bannerBackground', '#1a0303');
+     document.documentElement.style.setProperty('--mainBackground', '#473e3e');
+     document.documentElement.style.setProperty('--blackText', '#dcdde4');
+     document.documentElement.style.setProperty('--whiteText', '#dcdde4');
+     document.documentElement.style.setProperty('--lighterMaroonEmphasis', '#f3d3d3');
+
+     document.documentElement.style.setProperty('--verseNumber', '#709cdf');
+     document.documentElement.style.setProperty('--navyEmphasis', '#709cdf');
+     document.documentElement.style.setProperty('--searchResults', '#fa4d4d');
+     document.documentElement.style.setProperty('--gradientLight', '#5d656e');
+     document.documentElement.style.setProperty('--gradientDark', '#010914');
+     document.getElementById('id-endLine').style.color = '#010914';
+};
 
 async function initialize() {
 

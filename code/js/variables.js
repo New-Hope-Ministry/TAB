@@ -1,4 +1,4 @@
-const dateEdited = '7-14-2025';
+const dateEdited = '7-15-2025';
 
 var allLoaded = false;
 var bookSort = false;
@@ -387,7 +387,7 @@ var versions = [
         "lid": 1,
         "rdl": 0,
         "sch": 1,
-        "t": "Albanian Bible Shqip Bibla"
+        "t": "Albanian Bible - Shqip Bibla"
     },
     {
         "ar": "AVD",
@@ -403,7 +403,7 @@ var versions = [
         "lid": 7,
         "rdl": 0,
         "sch": 0,
-        "t": "Chinese Union (Simplified)"
+        "t": "Chinese Union (Simplified) - 简体中文联盟"
     },
     {
         "ar": "CUSS",
@@ -419,7 +419,7 @@ var versions = [
         "lid": 11,
         "rdl": 0,
         "sch": 0,
-        "t": "Chinese Union (Traditional)"
+        "t": "Chinese Union (Traditional) - 繁體中文聯會"
     },
     {
         "ar": "CUTS",
@@ -435,7 +435,7 @@ var versions = [
         "lid": 18,
         "rdl": 0,
         "sch": 1,
-        "t": "Czech Bible Kralicka"
+        "t": "Czech Bible of Kralice - Czech Bible Kralická"
     },
     {
         "ar": "DSV",
@@ -443,7 +443,7 @@ var versions = [
         "lid": 22,
         "rdl": 0,
         "sch": 1,
-        "t": "Dutch Staten Vertaling Statenbijbel"
+        "t": "Dutch Staten Bible Translation - Dutch Staten Vertaling Statenbijbel"
     },
     {
         "ar": "AKJ",
@@ -611,39 +611,39 @@ var versions = [
         "lid": 35,
         "rdl": 0,
         "sch": 1,
-        "t": "Finnish Bible Version (1776) Biblia Vanha kirkkoraamattu"
+        "t": "Old Finnish Bible (1776) Vanha suomalainen Biblia"
     },
     {
-        "ar": "FLB",
+        "ar": "FLS",
         "id": 30,
         "lid": 38,
         "rdl": 0,
         "sch": 1,
-        "t": "French La Bible de l'Épée (2005)"
+        "t": "French Louis Segond Version (1910) - Version française de Louis Segond"
     },
     {
-        "ar": "FLS",
+        "ar": "FMT",
         "id": 31,
         "lid": 38,
         "rdl": 0,
         "sch": 1,
-        "t": "French Louis Segond Version (1910)"
+        "t": "French Martin Version (1744) - Version Martin française"
     },
     {
-        "ar": "FMT",
+        "ar": "FOS",
         "id": 32,
         "lid": 38,
         "rdl": 0,
         "sch": 1,
-        "t": "French Martin Version (1744)"
+        "t": "French Ostervald Version (1996) - Version française d'Ostervald"
     },
     {
-        "ar": "FOS",
+        "ar": "FLB",
         "id": 33,
         "lid": 38,
         "rdl": 0,
         "sch": 1,
-        "t": "French Ostervald Version (1996)"
+        "t": "New French Bible (2005) - Nouvelle Bible française"
     },
     {
         "ar": "GEL",
@@ -651,7 +651,7 @@ var versions = [
         "lid": 42,
         "rdl": 0,
         "sch": 1,
-        "t": "German Elberfelder Version (1871)"
+        "t": "German Elberfelder Version (1871) - Deutsche Elberfelder Version"
     },
     {
         "ar": "GER",
@@ -659,7 +659,7 @@ var versions = [
         "lid": 42,
         "rdl": 0,
         "sch": 1,
-        "t": "German Elberfelder Version (1905)"
+        "t": "German Elberfelder Version (1905) - Deutsche Elberfelder Version"
     },
     {
         "ar": "GLB",
@@ -667,7 +667,7 @@ var versions = [
         "lid": 42,
         "rdl": 0,
         "sch": 1,
-        "t": "German Luther Bible (1545)"
+        "t": "German Luther Bible (1545) - Deutsche Lutherbibel"
     },
     {
         "ar": "GLU",
@@ -675,7 +675,7 @@ var versions = [
         "lid": 42,
         "rdl": 0,
         "sch": 1,
-        "t": "German Luther Bible (1912)"
+        "t": "German Luther Bible (1912) - Deutsche Lutherbibel"
     },
     {
         "ar": "GSH",
@@ -683,7 +683,7 @@ var versions = [
         "lid": 42,
         "rdl": 0,
         "sch": 1,
-        "t": "German Schlachter Bibel (1951)"
+        "t": "German Schlachter Bible (1951) - Deutsche Schlachter-Bibel"
     },
     {
         "ar": "HIR",
@@ -691,7 +691,7 @@ var versions = [
         "lid": 48,
         "rdl": 0,
         "sch": 0,
-        "t": "Hindi Indian Revised Version (2017/2018)"
+        "t": "Hindi Indian Revised Version (2017/2018) - हिंदी भारतीय संशोधित संस्करण"
     },
     {
         "ar": "HKV",
@@ -699,23 +699,23 @@ var versions = [
         "lid": 49,
         "rdl": 0,
         "sch": 1,
-        "t": "Hungarian Karoli Version"
+        "t": "Hungarian Karoli Version - Magyar Karoli Version"
     },
     {
-        "ar": "ITB",
+        "ar": "ITL",
         "id": 41,
         "lid": 52,
         "rdl": 0,
         "sch": 1,
-        "t": "Indonesian Terjemahan Baru (1994)"
+        "t": "Indonesian Old Translation - Indonesian Terjemahan Lama"
     },
     {
-        "ar": "ITL",
+        "ar": "ITB",
         "id": 42,
         "lid": 52,
         "rdl": 0,
         "sch": 1,
-        "t": "Indonesian Terjemahan Lama"
+        "t": "New Indonesian Translation (1994) - Indonesian Terjemahan Baru"
     },
     {
         "ar": "ITV",
@@ -723,23 +723,23 @@ var versions = [
         "lid": 53,
         "rdl": 0,
         "sch": 1,
-        "t": "Italian Diodati Version (1649)"
+        "t": "Italian Giovanni Diodati Version (1649) - Versione Giovanni italiana Diodati"
     },
     {
-        "ar": "JBY",
+        "ar": "JKY",
         "id": 44,
         "lid": 54,
         "rdl": 0,
         "sch": 0,
-        "t": "Japanese Bungo-yaku: Taisho-kaiyaku (NT) (1950), Meiji-yaku (OT) (1950/1953)"
+        "t": "Japanese Alternative Bible (1954/1955) - 日本語代替聖書"
     },
     {
-        "ar": "JKY",
+        "ar": "JBY",
         "id": 45,
         "lid": 54,
         "rdl": 0,
         "sch": 0,
-        "t": "Japanese Kougo-yaku (1954/1955)"
+        "t": "Japanese National Literary Bible (1950/1953) - 日本語聖書"
     },
     {
         "ar": "KBQ",
@@ -747,7 +747,7 @@ var versions = [
         "lid": 55,
         "rdl": 0,
         "sch": 1,
-        "t": "Kamano-Kafe Bible"
+        "t": "Kamano-Kafe Bible - Kamano-Kafe Baepol"
     },
     {
         "ar": "KBV",
@@ -755,7 +755,7 @@ var versions = [
         "lid": 58,
         "rdl": 0,
         "sch": 0,
-        "t": "Korean Bible Version"
+        "t": "Korean Bible Version - 한국어 성경 번역"
     },
     {
         "ar": "MAO",
@@ -763,7 +763,7 @@ var versions = [
         "lid": 62,
         "rdl": 0,
         "sch": 1,
-        "t": "Maori Bible Version Te Paipera Tapu"
+        "t": "Maori Bible Version - Te Paipera Tapu"
     },
     {
         "ar": "BBB",
@@ -795,23 +795,23 @@ var versions = [
         "lid": 70,
         "rdl": 0,
         "sch": 0,
-        "t": "Old Persian Translation (1895)"
+        "t": "Old Persian Translation (1895) - ترجمه فارسی باستان"
     },
     {
-        "ar": "PBN",
+        "ar": "PBV",
         "id": 53,
         "lid": 72,
         "rdl": 0,
         "sch": 1,
-        "t": "Polish NOWEJ BIBLII GDANSKIEJ (2012)"
+        "t": "Polish Bible of Gdansk (1881) - Polska Biblia Gdanska"
     },
     {
-        "ar": "PBV",
+        "ar": "PBN",
         "id": 54,
         "lid": 72,
         "rdl": 0,
         "sch": 1,
-        "t": "Polska Biblia Gdanska (1881)"
+        "t": "Polish New Gdansk Bible (2012) - Polska Nowa Biblia Gdańska"
     },
     {
         "ar": "PTB",
@@ -819,23 +819,23 @@ var versions = [
         "lid": 73,
         "rdl": 0,
         "sch": 1,
-        "t": "Portuguese Biblia Livre"
+        "t": "Portuguese Free Bible - Bíblia em Português Grátis"
     },
     {
-        "ar": "PTA",
+        "ar": "PTC",
         "id": 56,
         "lid": 73,
         "rdl": 0,
         "sch": 1,
-        "t": "Portuguese Tradução de João Ferreira de Almeida (Versão Revista e Atualizada)"
+        "t": "Portuguese Translation by João Ferreira de Almeida Revised and Corrected - Tradução de João Ferreira de Almeida Revista e Corrigida"
     },
     {
-        "ar": "PTC",
+        "ar": "PTA",
         "id": 57,
         "lid": 73,
         "rdl": 0,
         "sch": 1,
-        "t": "Portuguese Tradução de João Ferreira de Almeida Revista e Corrigida"
+        "t": "Portuguese Translation by João Ferreira de Almeida Revised and Updated - Tradução de João Ferreira de Almeida Revista e Atualizada"
     },
     {
         "ar": "RCV",
@@ -843,7 +843,7 @@ var versions = [
         "lid": 77,
         "rdl": 0,
         "sch": 1,
-        "t": "Romanian Cornilescu Version"
+        "t": "Romanian Cornilescu Version - Versiunea Cornilescu în limba română"
     },
     {
         "ar": "RSB",
@@ -851,47 +851,47 @@ var versions = [
         "lid": 78,
         "rdl": 0,
         "sch": 0,
-        "t": "Russian Synodal Bible (1876)"
+        "t": "Russian Synodal Bible (1876) - Русская Синодальная Библия"
     },
     {
-        "ar": "SRV",
+        "ar": "SSE",
         "id": 60,
         "lid": 84,
         "rdl": 0,
         "sch": 1,
-        "t": "Spanish Reina Valera (1909)"
+        "t": "Spanish Holy Scriptures (1569) - Sagradas Escrituras Españolas"
     },
     {
-        "ar": "SRG",
+        "ar": "SRV",
         "id": 61,
         "lid": 84,
         "rdl": 0,
         "sch": 1,
-        "t": "Spanish Reina Valera Gómez (2004)"
+        "t": "Spanish Reina Valera (1909) - Reina Valera Española"
     },
     {
-        "ar": "SRZ",
+        "ar": "SRG",
         "id": 62,
         "lid": 84,
         "rdl": 0,
         "sch": 1,
-        "t": "Spanish Reina Valera Gómez (2010)"
+        "t": "Spanish Reina Valera Gómez (2004) - Reina Valera Gómez Española"
     },
     {
-        "ar": "SRVS",
+        "ar": "SRZ",
         "id": 63,
         "lid": 84,
         "rdl": 0,
         "sch": 1,
-        "t": "Spanish Reina Valera w/Strong's - Reina Valera española (1909)"
+        "t": "Spanish Reina Valera Gómez (2010) - Reina Valera Gómez Española"
     },
     {
-        "ar": "SSE",
+        "ar": "SRVS",
         "id": 64,
         "lid": 84,
         "rdl": 0,
         "sch": 1,
-        "t": "Spanish Sagradas Escrituras (1569)"
+        "t": "Spanish Reina Valera w/Strong's (1909) - Reina Valera Española con Strong's"
     },
     {
         "ar": "TAB",
@@ -899,7 +899,7 @@ var versions = [
         "lid": 91,
         "rdl": 0,
         "sch": 1,
-        "t": "Tagalog Ang Biblia (1905)"
+        "t": "The Tagalog Bible (1905) -  Ang Tagalog Biblia"
     },
     {
         "ar": "TVB",
@@ -907,7 +907,7 @@ var versions = [
         "lid": 95,
         "rdl": 0,
         "sch": 1,
-        "t": "Turkish Bible Version"
+        "t": "Turkish Bible Version - Türkçe İncil Versiyonu"
     },
     {
         "ar": "VCV",
@@ -915,149 +915,149 @@ var versions = [
         "lid": 99,
         "rdl": 0,
         "sch": 1,
-        "t": "Vietnamese Cadman Version (1934)"
+        "t": "Vietnamese Cadman Version (1934) - Phiên bản Cadman Việt Nam"
     }
 ];
 
 var languages = [
     {
-        "lng": "Albanian Shqip",
-        "lngc": "sq-AL",
-        "lid": 1
+        "lid": 1,
+        "lng": "Albanian - Shqip",
+        "lngc": "sq-AL"
     },
     {
-        "lng": "Arabic اَلْعَرَبِيَّةُ (al-ʿarabiyyah)",
-        "lngc": "ar-SA",
-        "lid": 2
+        "lid": 2,
+        "lng": "Arabic - اَلْعَرَبِيَّةُ (al-ʿarabiyyah)",
+        "lngc": "ar-SA"
     },
     {
-        "lng": "Chinese Simplified 简体中文 (jiǎntǐ zhōngwén)",
-        "lngc": "zh-Hans",
-        "lid": 7
+        "lid": 7,
+        "lng": "Chinese Simplified - 简体中文 (jiǎntǐ zhōngwén)",
+        "lngc": "zh-Hans"
     },
     {
-        "lng": "Chinese Traditional 繁體中文 (fántǐ zhōngwén)",
-        "lngc": "zh-Hant",
-        "lid": 11
+        "lid": 11,
+        "lng": "Chinese Traditional - 繁體中文 (fántǐ zhōngwén)",
+        "lngc": "zh-Hant"
     },
     {
-        "lng": "Czech čeština",
-        "lngc": "cs-CZ",
-        "lid": 18
+        "lid": 18,
+        "lng": "Czech - čeština",
+        "lngc": "cs-CZ"
     },
     {
-        "lng": "Dutch Nederlands",
-        "lngc": "nl-NL",
-        "lid": 22
+        "lid": 22,
+        "lng": "Dutch - Nederlands",
+        "lngc": "nl-NL"
     },
     {
+        "lid": 34,
         "lng": "English",
-        "lngc": "en-US",
-        "lid": 34
+        "lngc": "en-US"
     },
     {
-        "lng": "Finnish Suomi",
-        "lngc": "fi-FI",
-        "lid": 35
+        "lid": 35,
+        "lng": "Finnish - Suomi",
+        "lngc": "fi-FI"
     },
     {
-        "lng": "French Français",
-        "lngc": "fr-FR",
-        "lid": 38
+        "lid": 38,
+        "lng": "French - Français",
+        "lngc": "fr-FR"
     },
     {
-        "lng": "German Deutsch",
-        "lngc": "de-DE",
-        "lid": 42
+        "lid": 42,
+        "lng": "German - Deutsch",
+        "lngc": "de-DE"
     },
     {
-        "lng": "Hindi हिन्दी (Hindī)",
-        "lngc": "hi-IN",
-        "lid": 48
+        "lid": 48,
+        "lng": "Hindi - हिन्दी (Hindī)",
+        "lngc": "hi-IN"
     },
     {
-        "lng": "Hungarian magyar",
-        "lngc": "hu-HU",
-        "lid": 49
+        "lid": 49,
+        "lng": "Hungarian - magyar",
+        "lngc": "hu-HU"
     },
     {
-        "lng": "Indonesian Bahasa Indonesia",
-        "lngc": "id-ID",
-        "lid": 52
+        "lid": 52,
+        "lng": "Indonesian - Bahasa Indonesia",
+        "lngc": "id-ID"
     },
     {
-        "lng": "Italian Italiano",
-        "lngc": "it-IT",
-        "lid": 53
+        "lid": 53,
+        "lng": "Italian - Italiano",
+        "lngc": "it-IT"
     },
     {
-        "lng": "Japanese (日本語 (にほんご))",
-        "lngc": "ja-JP",
-        "lid": 54
+        "lid": 54,
+        "lng": "Japanese - 日本語",
+        "lngc": "ja-JP"
     },
     {
+        "lid": 55,
         "lng": "Kamano-Kafe",
-        "lngc": "kmo",
-        "lid": 55
+        "lngc": "kmo"
     },
     {
-        "lng": "Korean (한국어)",
-        "lngc": "ko-KR",
-        "lid": 58
+        "lid": 58,
+        "lng": "Korean - 한국인",
+        "lngc": "ko-KR"
     },
     {
-        "lng": "Maori Māori",
-        "lngc": "mi-NZ",
-        "lid": 62
+        "lid": 62,
+        "lng": "Maori - Māori",
+        "lngc": "mi-NZ"
     },
     {
+        "lid": 68,
         "lng": "Olde English",
-        "lngc": "en-olde",
-        "lid": 68
+        "lngc": "en-olde"
     },
     {
-        "lng": "Persian Farsi دری (Dari)",
-        "lngc": "fa-IR",
-        "lid": 70
+        "lid": 70,
+        "lng": "Persian Farsi - دری (Dari)",
+        "lngc": "fa-IR"
     },
     {
-        "lng": "Polish polski",
-        "lngc": "pl-PL",
-        "lid": 72
+        "lid": 72,
+        "lng": "Polish - Polski",
+        "lngc": "pl-PL"
     },
     {
-        "lng": "Portuguese Português",
-        "lngc": "pt-BR",
-        "lid": 73
+        "lid": 73,
+        "lng": "Portuguese - Português",
+        "lngc": "pt-BR"
     },
     {
-        "lng": "Romanian Română",
-        "lngc": "ro-RO",
-        "lid": 77
+        "lid": 77,
+        "lng": "Romanian - Română",
+        "lngc": "ro-RO"
     },
     {
-        "lng": "Russian русский (russkiy)",
-        "lngc": "ru-RU",
-        "lid": 78
+        "lid": 78,
+        "lng": "Russian - русский (russkiy)",
+        "lngc": "ru-RU"
     },
     {
-        "lng": "Spanish Español",
-        "lngc": "es-MX",
-        "lid": 84
+        "lid": 88,
+        "lng": "Spanish - Español",
+        "lngc": "es-MX"
     },
     {
+        "lid": 91,
         "lng": "Tagalog",
-        "lngc": "tl-PH",
-        "lid": 91
+        "lngc": "tl-PH"
     },
     {
-        "lng": "Turkish Türkçe",
-        "lngc": "tr-TR",
-        "lid": 95
+        "lid": 95,
+        "lng": "Turkish - Türkçe",
+        "lngc": "tr-TR"
     },
     {
-        "lng": "Vietnamese Tiếng Việt",
-        "lngc": "vi-VN",
-        "lid": 99
+        "lid": 99,
+        "lng": "Vietnamese - Tiếng Việt",
+        "lngc": "vi-VN"
     }
 ];
