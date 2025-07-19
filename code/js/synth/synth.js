@@ -45,6 +45,11 @@ window.addEventListener("load", async () => {
                rotateTheme = false;
           };
           startUp();
+
+          let xlangElement = document.getElementById('id-languages');
+          for (let ii = xlangElement.children.length - 2; ii >= 1; ii--) {
+                    xlangElement.removeChild(xlangElement.children[ii]);
+          };
      };
      window.addEventListener("resize", adjustPosition);
      if ('speechSynthesis' in window) {
@@ -77,8 +82,6 @@ function listVoices() {
           localVoices.push(avoice);
      });
 };
-
-function listVoices1() { voices = speechSynthesis.getVoices(); };
 
 function checkVoices() {
 

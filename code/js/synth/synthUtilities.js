@@ -101,6 +101,9 @@ function openBox(e = null) {
           case "id-SynthBtn1":
                id = 'id-versions';
                document.getElementById(id).style.display = 'block';
+               if (document.getElementById('id-languages').children.length < 3) {
+                    document.getElementById('id-openLngs').style.display = 'none';
+               };
                document.getElementById(activeVersionID).scrollIntoView({ block: 'center' });
                locateBox('id-header1', id);
                break;
