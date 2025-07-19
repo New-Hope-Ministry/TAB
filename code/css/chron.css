@@ -186,11 +186,101 @@ p { font-size: 1.06rem; }
 
 .cs-bvSelected { background-color: #8e8c8c; color: white; }
 .cs-darkTheme { background-color: #3d3636; color: white; }
+.cs-bvSelected {
+     background-color: #8e8c8c;
+     color: white;
+}
+
 
 /*? Media Queries widths */
-@media (max-width: 480px) { .cs-chronMenu { font-size: .80rem; } .cs-chronTitleHeader { font-size: .80rem; } }
-@media (max-width: 348px) { .cs-chronDay { font-size: 1.2em; height: 1.6em; width: 1.6em; } }
+@media (max-width: 1920px) {
+     .cs-mainPage { width: 60%; }
+     .cs-page { width: 90%; }
+}
+@media (max-width: 1440px) {
+     .cs-mainPage { width: 70%; border-radius: 6px; }
+     .cs-page { width: 90%; }
+}
+@media (max-width: 1280px) {
+     .cs-mainPage { width: 70%; }
+     .cs-page { width: 90%; }
+}
+@media (max-width: 1025px) {
+     .cs-mainPage { width: 100%; border-radius: 0; }
+     .cs-page { width: 90%; }
+}
+@media (max-width: 768px) {
+     .cs-menu1 { position: absolute; left: 20%; transform: translate(-25%); }
+     .cs-menuBtn { font-size: 1rem; }
+     .cs-books,
+     .cs-versions,
+     .cs-languages { width: 330px; }
+     .cs-book,
+     .cs-headline,
+     .cs-bottomLine { font-size: 1.1rem; }
+}
+@media (max-width: 480px) {
+     .cs-chronMenu { font-size: .80rem; }
+     .cs-chronTitleHeader { font-size: .80rem; }
+     .cs-banner { top: 1.95rem; }
+     .cs-books,
+     .cs-versions,
+     .cs-languages { width: 100%; }
+}
+@media (max-width: 348px) {
+     .cs-chronDay,
+     .cs-chapter { font-size: 1.2em; height: 1.6em; width: 1.6em; }
+     .cs-books
+     .cs-menuBtn { font-size: .80rem; }
+     .cs-book,
+     .cs-version { font-size: 1.1rem; }
+}
 
+
+
+
+/*! Media Queries Heights */
+     @media (max-height: 1368px) { .cs-mainPage { margin-top: .5em; } }
+     @media (max-height: 1080px) {
+          .cs-page { margin-top: 2.5em; }
+          .cs-books,
+          .cs-versions,
+          .cs-languages { height: 49%; }
+     }
+     @media (max-height: 1024px) {
+          .cs-books,
+          .cs-versions,
+          .cs-languages { height: 48%; }
+     }
+
+     @media (max-height: 932px) {
+          .cs-books,
+          .cs-versions,
+          .cs-languages { max-height: 75%; }
+     }
+     @media (max-height: 741px) {
+          .cs-page { margin-top: 2em; }
+          .cs-books,
+          .cs-versions,
+          .cs-languages { height: 70%; }
+     }
+     @media (max-height: 668px) {
+          .cs-books,
+          .cs-versions,
+          .cs-languages { max-height: 67%; }
+     }
+     @media (max-height: 600px) { .cs-books { max-height: 84%; } }
+     @media (max-height: 568px) {
+          .cs-books,
+          .cs-versions,
+          .cs-languages { height: 73%; }
+     }
+     @media (max-height: 480px) {
+          .cs-books,
+          .cs-versions,
+          .cs-languages { height: 83%; }
+     }
+/*! End Media Queries Heights */
 
 
 /* Utilities */

@@ -435,7 +435,7 @@
          width: 50%;
     }
 
-    .cs-filler,
+    /*.cs-filler,*/
     .cs-bvSelected {
          background-color: #8e8c8c;
          color: white;
@@ -449,6 +449,7 @@
          padding-bottom: 1.5em;
     }
 
+    /*
     .cs-sortHeader {
          position: absolute;
          left: 50%;
@@ -460,7 +461,7 @@
          color: var(--bannerBackground);
          border-radius: 5px;
          width: max-content;
-    }
+    }*/
 
     .cs-bookLine {
          position: relative;
@@ -781,10 +782,7 @@
 /*? End Media Queries Widths */
 
 /*! Media Queries Heights */
-     @media (max-height: 1368px) {
-          .cs-mainPage { margin-top: .5em; }
-          .cs-TWFcontainer { margin-top: 6.5em; }
-     }
+     @media (max-height: 1368px) { .cs-mainPage { margin-top: .5em; } }
      @media (max-height: 1280px) {  }
      @media (max-height: 1080px) {
           .cs-page { margin-top: 2.5em; }
@@ -812,7 +810,6 @@
           .cs-languages { height: 70%; }
      }
      @media (max-height: 668px) {
-          .cs-page { margin-top: 2em; }
           .cs-searchContainer { margin-top: 5.9em; }
           .cs-books,
           .cs-versions,

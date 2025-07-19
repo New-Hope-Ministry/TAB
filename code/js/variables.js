@@ -1,4 +1,4 @@
-const dateEdited = '7-15-2025';
+const dateEdited = '7-19-2025';
 
 var allLoaded = false;
 var bookSort = false;
@@ -19,6 +19,7 @@ var activeLanguageID = null;
 var activeVersionID = null;
 
 var isTWF = true;
+var localVoices = [];
 var paragraphLayoutDefault = 0;
 var redLetterDefault = 0;
 var rotateTheme = true;
@@ -921,143 +922,171 @@ var versions = [
 
 var languages = [
     {
+        "idx": 0,
         "lid": 1,
         "lng": "Albanian - Shqip",
         "lngc": "sq-AL"
     },
     {
+        "idx": 1,
         "lid": 2,
         "lng": "Arabic - اَلْعَرَبِيَّةُ (al-ʿarabiyyah)",
         "lngc": "ar-SA"
     },
     {
+        "idx": 2,
         "lid": 7,
         "lng": "Chinese Simplified - 简体中文 (jiǎntǐ zhōngwén)",
         "lngc": "zh-Hans"
     },
     {
+        "idx": 3,
         "lid": 11,
         "lng": "Chinese Traditional - 繁體中文 (fántǐ zhōngwén)",
         "lngc": "zh-Hant"
     },
     {
+        "idx": 4,
         "lid": 18,
-        "lng": "Czech - čeština",
+        "lng": "Czech čeština",
         "lngc": "cs-CZ"
     },
     {
+        "idx": 5,
         "lid": 22,
         "lng": "Dutch - Nederlands",
         "lngc": "nl-NL"
     },
     {
+        "idx": 6,
         "lid": 34,
         "lng": "English",
         "lngc": "en-US"
     },
     {
+        "idx": 7,
         "lid": 35,
         "lng": "Finnish - Suomi",
         "lngc": "fi-FI"
     },
     {
+        "idx": 8,
         "lid": 38,
         "lng": "French - Français",
         "lngc": "fr-FR"
     },
     {
+        "idx": 9,
         "lid": 42,
         "lng": "German - Deutsch",
         "lngc": "de-DE"
     },
     {
+        "idx": 10,
         "lid": 48,
         "lng": "Hindi - हिन्दी (Hindī)",
         "lngc": "hi-IN"
     },
     {
+        "idx": 11,
         "lid": 49,
         "lng": "Hungarian - magyar",
         "lngc": "hu-HU"
     },
     {
+        "idx": 12,
         "lid": 52,
         "lng": "Indonesian - Bahasa Indonesia",
         "lngc": "id-ID"
     },
     {
+        "idx": 13,
         "lid": 53,
         "lng": "Italian - Italiano",
         "lngc": "it-IT"
     },
     {
+        "idx": 14,
         "lid": 54,
         "lng": "Japanese - 日本語",
         "lngc": "ja-JP"
     },
     {
+        "idx": 15,
         "lid": 55,
         "lng": "Kamano-Kafe",
         "lngc": "kmo"
     },
     {
+        "idx": 16,
         "lid": 58,
         "lng": "Korean - 한국인",
         "lngc": "ko-KR"
     },
     {
+        "idx": 17,
         "lid": 62,
         "lng": "Maori - Māori",
         "lngc": "mi-NZ"
     },
     {
+        "idx": 18,
         "lid": 68,
         "lng": "Olde English",
         "lngc": "en-olde"
     },
     {
+        "idx": 19,
         "lid": 70,
         "lng": "Persian Farsi - دری (Dari)",
         "lngc": "fa-IR"
     },
     {
+        "idx": 20,
         "lid": 72,
         "lng": "Polish - Polski",
         "lngc": "pl-PL"
     },
     {
+        "idx": 21,
         "lid": 73,
         "lng": "Portuguese - Português",
         "lngc": "pt-BR"
     },
     {
+        "idx": 22,
         "lid": 77,
         "lng": "Romanian - Română",
         "lngc": "ro-RO"
     },
     {
+        "idx": 23,
         "lid": 78,
         "lng": "Russian - русский (russkiy)",
         "lngc": "ru-RU"
     },
     {
-        "lid": 88,
+        "idx": 24,
+        "lid": 84,
         "lng": "Spanish - Español",
-        "lngc": "es-MX"
+        "lngc": "es-ES"
     },
     {
+        "idx": 25,
         "lid": 91,
         "lng": "Tagalog",
         "lngc": "tl-PH"
     },
     {
+        "idx": 26,
         "lid": 95,
         "lng": "Turkish - Türkçe",
         "lngc": "tr-TR"
     },
     {
+        "idx": 27,
         "lid": 99,
         "lng": "Vietnamese - Tiếng Việt",
         "lngc": "vi-VN"
     }
-];
+]

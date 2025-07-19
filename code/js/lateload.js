@@ -43,9 +43,15 @@ async function changeLanguage(e = null) {
      activeBookID = defaultBookID;
      activeChapterID = defaultChapterID;
      activeLanguageID = languages[idx].lid;
-
+     let i = localVoices.findIndex(rec => rec.lang === languages[idx].lngc);
+     if (i > -1) {
+          document.getElementById('id-listen').style.display = 'flex';
+          document.getElementById('id-brListen').style.display = 'block';
+     } else {
+          document.getElementById('id-listen').style.display = 'none';
+          document.getElementById('id-brListen').style.display = 'none';
+     };
      loadVersions();
-
      document.getElementById('id-language').textContent = `Language: ${languages[idx].lng}`;
      closeLanguage();
      let parentElement = document.getElementById('id-versions');
@@ -150,12 +156,22 @@ function nextChapter() {
      document.getElementById('top').scrollIntoView({ block: 'start' });
 };
 
+function synthVoice() {
+
+     const params = new URLSearchParams(window.location.search);
+     const verid = params.get('verid');
+     const bid = params.get('bid');
+     const cn = params.get('cn');
+     const readhref = `synth.html?verid=${verid}&bid=${bid}&cn=${cn}`;
+     window.location.href = readhref;
+     console.log('test');
+};
+
 function readChronological() {
 
      const params = new URLSearchParams(window.location.search);
      const verid = params.get('verid');
      const readhref = `chron.html?verid=${verid}`;
-     //window.location.replace(readhref);
      window.location.href = readhref;
      console.log('test');
 };

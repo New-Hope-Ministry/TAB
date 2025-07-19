@@ -1,4 +1,3 @@
-
 async function loadBooks() {
 
      let i = 0;
@@ -184,7 +183,6 @@ async function loadLanguages() {
      div1.textContent = `Language: ${languages[ii].lng}`;
      div.appendChild(div1);
      menuLanguages.appendChild(div);
-
      for (const lang of languages) {
 
           div = document.createElement("div");

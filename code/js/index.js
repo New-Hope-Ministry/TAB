@@ -6,7 +6,6 @@ window.addEventListener("load", async () => {
      if (rec) { rec = false; rec = await loadVersions(); };
      if (rec) { rec = false; rec = await loadBooks(); };
      if (rec) { rec = false; rec = await loadChapters(); allLoaded = true; };
-
      if (rec) { rec = false; rec = await getVersion(); };
 
      if (rec && allLoaded) {
@@ -27,7 +26,39 @@ window.addEventListener("load", async () => {
           startUp();
      };
      window.addEventListener("resize", adjustPosition);
+     if ('speechSynthesis' in window) {
+          if (speechSynthesis.onvoiceschanged !== undefined) {
+               speechSynthesis.onvoiceschanged = listVoices;
+          } else {
+               listVoices();
+          };
+     };
 });
+
+async function listVoices() {
+
+     let avoice;
+     const voices = speechSynthesis.getVoices();
+     voices.forEach((voice, index) => {
+          avoice = {
+               idx: index,
+               name: voice.name,
+               lang: voice.lang,
+               default: voice.default
+          };
+          index++;
+          localVoices.push(avoice);
+     });
+     let i = languages.findIndex(rec => rec.lid === activeLanguageID);
+     let ndx = localVoices.findIndex(rec => rec.lang === languages[i].lngc);
+     if (ndx > -1) {
+          document.getElementById('id-listen').style.display = 'flex';
+          document.getElementById('id-brListen').style.display = 'block';
+     } else {
+          document.getElementById('id-listen').style.display = 'none';
+          document.getElementById('id-brListen').style.display = 'none';
+     };
+};
 
 async function getDefaults() {
 

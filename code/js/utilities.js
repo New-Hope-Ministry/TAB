@@ -418,7 +418,7 @@ function toggleTheme() {
      let theme = document.getElementById("id-theme");
      theme.classList.toggle("cs-darkTheme");
      theme.textContent = theme.classList.contains("cs-darkTheme") ? "🌙" : "☀️";
-}
+};
 
 function unHighlight() {
      selected('id-verse0', 'id-verses');
