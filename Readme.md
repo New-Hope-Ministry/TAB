@@ -1,0 +1,1 @@
+The TAB repository contains the functional and data files for The Ark Bible application. The Ark Bible is an online Bible with many different versions of the Bible available.

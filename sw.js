@@ -1,4 +1,4 @@
-const version = 18;
+const version = 19;
 var oldVersion = version - 1;
 // Change scope in index.html
 
@@ -177,7 +177,6 @@ async function fetchOnline(url, filename) {
           };
      } else { return new Response(`${filename}: No internet connection error: 503-1`, { status: 503 }); };
 };
-
 
 async function checkVerses() {
 

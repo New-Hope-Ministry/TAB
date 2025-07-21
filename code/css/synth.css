@@ -134,7 +134,8 @@ body {
      margin: auto;
      background: #f3565b;
 }
-
+.cs-synthCheckBox { position: absolute; right: 5%; top: 40%; }
+.cs-plaCheckBoxLbl { font-size: .9rem; }
 .cs-speechBtns {
      display: flex;
      justify-content: center;
@@ -443,7 +444,6 @@ body {
      color: white;
 }
 .cs-edited { font-size: .4em; color: #545353; }
-
 .cs-loader {
      position: absolute;
      top: 50%;
@@ -455,6 +455,12 @@ body {
      width: 2em;
      height: 2em;
      animation: spin 2s linear infinite;
+}
+.cs-booksW {
+     width: max-content;
+}
+.cs-booksW1 {
+     width: var(--bookWidth);
 }
 
 /*? Media Queries Width */

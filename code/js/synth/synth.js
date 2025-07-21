@@ -11,12 +11,9 @@ let playerOpen = false;
 let playPause = true;
 let progress = 0;
 let progressBar;
-let starting = true;
 let synth = null;
 let textSpeech = ``;
 let utter;
-//let voices;
-
 let voices;
 
 window.addEventListener("load", async () => {
@@ -57,7 +54,6 @@ window.addEventListener("load", async () => {
                listVoices();
           };
      };
-     alert('You may experience problems with the speech synthesis object in your browser. Click on Help at the bottom of the page and scroll down to #9 for more information.')
 });
 
 // Wait for the voices to be loaded
@@ -82,24 +78,20 @@ function checkVoices() {
 
      let langElement = document.getElementById('id-languages');
      localVoices.forEach((voice) => {
-
-          for (let ii = 1; ii < langElement.children.length -1; ii++) {
+          for (let ii = 1; ii < langElement.children.length - 1; ii++) {
                if (langElement.children[ii].dataset.lngc === voice.lang) {
                     langElement.children[ii].dataset.keep = 1;
                     break;
                };
           };
      });
-     /*for (let ii = 1; ii < langElement.children.length -1; ii++) {
-          if (!langElement.children[ii].dataset.keep) {
-               langElement.removeChild(langElement.children[ii]);
-          };
-     };*/
+
      for (let ii = langElement.children.length - 2; ii >= 1; ii--) {
           if (!langElement.children[ii].dataset.keep) {
                langElement.removeChild(langElement.children[ii]);
           };
      };
+
 };
 
 window.onbeforeunload = (event) => {
@@ -116,7 +108,15 @@ function countWords(str) {
 // console.log(`Word Count: ${countWords(textSpeech.trim())}`);
 
 function estimateDuration(txt, rate = 1) {
-     const words = countWords(txt)
+     const words = countWords(txt);
+     //alert(words);
+     if (words > 2400) { rate = rate * .92 };
+     if (words > 1000) { rate = rate * .94 };
+     if (words > 800) { rate = rate * .96 };
+     if (words < 500) { rate = rate * .98 };
+     if (words < 400) { rate = rate * .95 };
+     if (words < 200) { rate = rate * .90 };
+     if (words < 100) { rate = rate * .86 };
      const wpm = 178 * rate; // Adjust based on rate
      return (words / wpm) * 60 * 1000;
 };
@@ -168,11 +168,106 @@ function startSpeech() {
 
           utter.onstart = () => { updateBar(); };
           utter.onend = () => {
-               clearInterval(interval);
                progressBar.style.width = "100%";
+               stopSpeech();
+               if (document.getElementById('id-playCheckBox').checked) {
+                    nextChapter();
+                    setTimeout(() => {
+                         startChapter();
+                    }, 100);
+               };
           };
           synth.speak(utter);
      }, 300);
+};
+
+function startChapter() {
+
+     if (isPaused) {
+          synth.resume();
+          updateBar();
+          document.getElementById('id-pauseSpeech').style.display = 'block';
+          document.getElementById('id-startSpeech').style.display = 'none';
+          document.getElementById('id-stopSpeech').style.display = 'block';
+          playPause = false;
+          isPaused = false;
+          return;
+     };
+
+     if (synth.speaking) return;
+
+     document.getElementById('id-pauseSpeech').style.display = 'block';
+     document.getElementById('id-startSpeech').style.display = 'none';
+     document.getElementById('id-stopSpeech').style.display = 'block';
+     playPause = false;
+     isPaused = false;
+
+     let aVersion = document.getElementById(activeVersionID);
+     let i = Number(aVersion.dataset.index);
+     let lid = versions[i].lid;
+     let x = languages.findIndex(rec => rec.lid === lid);
+     speechSynthesis.cancel();
+     setTimeout(() => {
+
+          utter = new SpeechSynthesisUtterance();
+          utter.text = textSpeech.replace(`${versions[i].t}: `, "");
+          utter.lang = languages[x].lngc;
+          utter.voice = voices.find(v => v.lang === languages[x].lngc);
+          utter.rate = 1;
+          progress = 0;
+          estimatedDuration = estimateDuration(textSpeech.trim(), utter.rate);
+          progressBar.style.width = "0%";
+
+          utter.onstart = () => { updateBar(); };
+          utter.onend = () => {
+               progressBar.style.width = "100%";
+               stopSpeech();
+               if (document.getElementById('id-playCheckBox').checked) {
+                    nextChapter();
+                    let newText = textSpeech;
+                    textSpeech = '';
+                    textSpeech = newText.replace("Twenty-First Century Version: ", "");
+                    setTimeout(() => {
+                         startChapter();
+                    }, 100);
+               };
+          };
+          synth.speak(utter);
+     }, 300);
+};
+
+async function nextChapter() {
+
+     setTimeout(async () => {
+
+          let i = 0;
+          let books = [];
+          let bid = Number(document.getElementById(activeBookID).dataset.bid);
+          if (bid < 40) {
+               i = oldBooks.findIndex(rec => rec.id === bid);
+               books = oldBooks;
+          } else {
+               i = newBooks.findIndex(rec => rec.id === bid);
+               books = newBooks;
+          };
+          let chapters = books[i].c;
+          let chapter = Number(document.getElementById(activeChapterID).textContent) + 1;
+          if (chapter > chapters) { bid++; chapter = 1; };
+          activeBookID = `id-book${bid}`;
+          activeChapterID = `id-chapter${chapter}`;
+          if (bid < 40) {
+               i = oldBooks.findIndex(rec => rec.id === bid);
+               books = oldBooks;
+          } else {
+               i = newBooks.findIndex(rec => rec.id === bid);
+               books = newBooks;
+          };
+          chapterCount = books[i].c;
+          getChapter();
+          loadChapters();
+          document.getElementById('top').scrollIntoView({ block: 'start' });
+     }, 300);
+     return true;
 };
 
 function pauseSpeech() {
@@ -185,13 +280,11 @@ function pauseSpeech() {
                document.getElementById('id-stopSpeech').style.display = 'none';
                document.getElementById('id-startSpeech').style.display = 'none';
                document.getElementById('id-pauseSpeech').style.display = 'block';
-               //document.getElementById('id-closePlayer').style.visibility = 'visible';
                playPause = false;
           } else {
                document.getElementById('id-stopSpeech').style.display = 'none';
                document.getElementById('id-pauseSpeech').style.display = 'none';
                document.getElementById('id-startSpeech').style.display = 'block';
-               //document.getElementById('id-closePlayer').style.visibility = 'hidden';
                playPause = true;
           };
      };
@@ -202,15 +295,14 @@ function stopSpeech() {
      if (synth.paused) { synth.resume(); };
      synth.cancel();
      clearInterval(interval);
-     progress = 0;
-     progressBar.style.width = "0%";
      document.getElementById('id-pauseSpeech').style.display = 'none';
      document.getElementById('id-stopSpeech').style.display = 'none';
      document.getElementById('id-startSpeech').style.display = 'block';
-     //document.getElementById('id-closePlayer').style.display = 'visible';
      utter = null;
      playPause = true;
      isPaused = false;
+     progress = 0;
+     progressBar.style.width = "0%";
 };
 
 async function getChapter() {
@@ -228,7 +320,7 @@ async function getChapter() {
      if (isTWF) {
           let sp2 = document.createElement('span');
           sp2.classList.add('cs-edited');
-          sp2.textContent =` TWF - Last Edited: ${dateEdited}`
+          sp2.textContent = ` TWF - Last Edited: ${dateEdited}`
           h2.appendChild(sp2);
      };
      page.appendChild(h2);
@@ -243,9 +335,11 @@ async function getChapter() {
 
      let idx = Number(document.getElementById(activeVersionID).dataset.index);
      let ndx = verses.findIndex(rec => rec.bid === activeBook);
-     let bid = Number(verses[ndx].bid) -1;
-     if ( bid < 39) { book = oldBooks[bid].t; } else { bid = bid - 39; book = newBooks[bid].t; }
+     let bid = Number(verses[ndx].bid) - 1;
+     if (bid < 39) { book = oldBooks[bid].t; } else { bid = bid - 39; book = newBooks[bid].t; };
+
      textSpeech = `${versions[idx].t}: ${book}: Chapter ${activeChapter}: `;
+
      verseCount = 0;
 
      while (i < verses.length && verses[i].cn === activeChapter && verses[i].bid === activeBook) {
@@ -300,6 +394,7 @@ async function getChapter() {
      };
      setFontSize();
      document.getElementById('id-SynthBtn3').textContent = `${document.getElementById(activeChapterID).textContent}:`;
+     return true;
 };
 
 async function getDefaults() {
@@ -349,7 +444,7 @@ async function getVersion(e = null) {
      let aVersion = document.getElementById(id);
      let idx = Number(aVersion.dataset.index);
      let url = `data/${versions[idx].ar}/${versions[idx].ar}Verses.json`;
-     if (versions[idx].ar === 'TWF') {isTWF = true} else {isTWF = false};
+     if (versions[idx].ar === 'TWF') { isTWF = true } else { isTWF = false };
      try {
           const res = await fetch(url);
           if (!res.ok) { throw new Error(res.status); };
