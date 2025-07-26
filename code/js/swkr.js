@@ -1,5 +1,5 @@
-const scope = '/';
-//const scope = '/TAB-Tester/';
+//const scope = '/';
+const scope = '/TAB-Tester/';
 
 async function saveLocal() {
     if (navigator.onLine) {

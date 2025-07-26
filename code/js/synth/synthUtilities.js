@@ -99,8 +99,10 @@ function openBox(e = null) {
      if (ID === 'id-header1' || ID === 'id-pageContainer' || ID === '' || ID === 'id-headline' || ID === '' || ID.includes("pid") || ID.includes("id-versNumber")) { closeBoxes(); return; };
      switch (ID) {
           case "id-SynthBtn1":
+               checkVoices();
                id = 'id-versions';
                document.getElementById(id).style.display = 'block';
+               //alert(document.getElementById('id-languages').children.length);
                if (document.getElementById('id-languages').children.length < 3) {
                     document.getElementById('id-openLngs').style.display = 'none';
                };
@@ -120,7 +122,6 @@ function openBox(e = null) {
                locateBox('id-header1', id);
                break;
           case "id-openLngs":
-               checkVoices();
                id = 'id-languages';
                locateBox('id-header1', id);
                document.getElementById('id-versions').style.display = 'none';

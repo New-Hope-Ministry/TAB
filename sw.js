@@ -132,7 +132,11 @@ self.addEventListener('fetch', event => {
                if (filename.endsWith('.json') && filename !== 'manifest.json') {
 
                     const cachedResponse = await versionCache.match(url);
-                    if (cachedResponse) { return cachedResponse };
+                    if (cachedResponse) {
+                         //! Start Here
+                         //const cntEncode = cachedResponse.headers.get('Content-Encoding')
+                         return cachedResponse;
+                    };
 
                     const response = await fetchOnline(url, filename);
                     if (!response.ok) { return response; };
@@ -141,7 +145,7 @@ self.addEventListener('fetch', event => {
                } else {
 
                     const cachedResponse = await cache.match(url);
-                    if (cachedResponse) { return cachedResponse };
+                    if (cachedResponse) { return cachedResponse; };
 
                     const response = await fetchOnline(url, filename);
                     if (!response.ok) { return response; };
